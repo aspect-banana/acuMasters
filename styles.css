@@ -16,7 +16,7 @@ header {
 
 header .logo h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 240px;
 }
 
 header nav ul {
@@ -181,19 +181,19 @@ header {
 
 header .logo h1 {
   margin: 0;
-  font-size: 45px;
+  font-size: 80px;
 }
 /* Apply the Bebas Neue font to h1 */
 h1 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 36px; /* Adjust size as needed */
+  font-size: 80px; /* Adjust size as needed */
   margin: 0;
 }
 
 /* Apply the Indie Flower font to h2 */
 h2 {
   font-family: 'Nerko One', cursive;
-  font-size: 30px; /* Adjust size as needed */
+  font-size: 45px; /* Adjust size as needed */
   margin: 0;
 }
 
