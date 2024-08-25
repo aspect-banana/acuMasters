@@ -1,0 +1,225 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1a3c;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #2b264b;
+}
+
+header .logo h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #785df2;
+}
+
+header .cta .work-with-us {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+header .cta .work-with-us:hover {
+  background-color: #785df2;
+  border-color: #785df2;
+  color: white;
+}
+
+.categories {
+  text-align: center;
+  padding: 20px;
+}
+
+.categories h2 {
+  margin-bottom: 20px;
+}
+
+.category-list {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.category-list button {
+  background-color: transparent;
+  border: 2px solid #555;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.category-list .active {
+  background-color: #785df2;
+  border-color: #785df2;
+}
+
+.category-list button:hover {
+  background-color: #785df2;
+  border-color: #785df2;
+  color: white;
+}
+
+.articles {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.article-card {
+  background-color: #302c5a;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.article-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+.article-card img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.article-card:hover img {
+  transform: scale(1.1);
+}
+
+.article-card h3 {
+  padding: 10px;
+  font-size: 18px;
+}
+
+.article-card p {
+  padding: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+/* Apply the Bebas Neue font to h1 */
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px; /* Adjust size as needed */
+  margin: 0;
+}
+
+/* Other existing styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1a3c;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #2b264b;
+}
+
+.articles {
+  display: flex;
+  flex-wrap: wrap; /* Allows the cards to wrap onto the next row */
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.article-card {
+  background-color: #302c5a;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  flex: 1 1 calc(25% - 40px); /* Ensure proper spacing between rows */
+  margin: 10px; /* Adjust spacing */
+}
+
+header .logo h1 {
+  margin: 0;
+  font-size: 45px;
+}
+/* Apply the Bebas Neue font to h1 */
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px; /* Adjust size as needed */
+  margin: 0;
+}
+
+/* Apply the Indie Flower font to h2 */
+h2 {
+  font-family: 'Nerko One', cursive;
+  font-size: 30px; /* Adjust size as needed */
+  margin: 0;
+}
+
+
+/* Other existing styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1a3c;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #2b264b;
+}
+
+header .logo h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* ... (rest of your CSS) */
+
+/* ... (rest of your CSS) */
