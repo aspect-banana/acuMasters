@@ -9,13 +9,69 @@
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="icon" type="image/x-icon" href="icon.jpg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nerko One&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap">
+
+    <!-- Pre-loader CSS -->
+    <style>
+        /* Pre-loader styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff; /* or any color matching your theme */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .pre-loader {
+            display: flex;
+            font-size: 2rem;
+            font-family: 'Bebas Neue', sans-serif;
+            list-style: none;
+            padding: 0;
+        }
+
+        .pre-loader li {
+            margin: 0 0.2rem;
+            animation: bounce 0.8s infinite alternate;
+        }
+
+        .pre-loader li:nth-child(1) { animation-delay: 0s; }
+        .pre-loader li:nth-child(2) { animation-delay: 0.1s; }
+        .pre-loader li:nth-child(3) { animation-delay: 0.2s; }
+        .pre-loader li:nth-child(4) { animation-delay: 0.3s; }
+        .pre-loader li:nth-child(5) { animation-delay: 0.4s; }
+        .pre-loader li:nth-child(6) { animation-delay: 0.5s; }
+        .pre-loader li:nth-child(7) { animation-delay: 0.6s; }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-30px); }
+        }
+    </style>
 </head>
 <body>
+    <!-- Pre-loader -->
+    <div id="preloader">
+        <ul class="pre-loader">
+            <li>L</li>
+            <li>O</li>
+            <li>A</li>
+            <li>D</li>
+            <li>I</li>
+            <li>N</li>
+            <li>G</li>
+        </ul>
+    </div>
+
+    <!-- Your existing content -->
     <header>
         <div class="logo">
-          <h1 style="font-size: 55px;">ACU MASTERS</h1>
-
+            <h1 style="font-size: 55px;">ACU MASTERS</h1>
         </div>
         <h2>" What you learn is yours forever"</h2>
         <div class="cta">
@@ -33,68 +89,73 @@
     </section>
 
     <section class="articles">
-      <!-- Row 1 -->
-      <div class="article-card">
-        <a href="sessions.html" target="_blank">
-            <img src="master's_session.png" alt="UI/UX Course">
-        </a>
-        <h3>MASTERS's Sessions</h3>
-        <p>By ACU MASTERS </p>
-    </div>
-      <div class="article-card">
-          <a href="https://mega.nz/file/t2VxSCwT#pXao7MiPWlfDccnnT-6TmbUkONpIu691dndUGx04ojc" target="_blank">
-              <img src="gammal_html.jpg" alt="HTML Course">
-          </a>
-          <h3>Course HTML [ FREE ]</h3>
-          <p>By Gammal Tech | ACU MASTERS</p>
-      </div>
-      <div class="article-card">
-          <a href="https://mega.nz/folder/VnNk1LoA#A3V4sM9UgZ7FMEQzH66pkg" target="_blank">
-              <img src="gammal.css.jpg" alt="CSS Course">
-          </a>
-          <h3>Course CSS [ FREE ]</h3>
-          <p>By Gammal Tech | ACU MASTERS</p>
-      </div>
-      <div class="article-card">
-          <a href="https://mega.nz/folder/xqFgDTJQ#wtdNeVVZNvKW4IQsZ0rrDQ" target="_blank">
-              <img src="gammal_js.jpg" alt="JS Course">
-          </a>
-          <h3>Course JS [ FREE ]</h3>
-          <p>By Gammal Tech | ACU MASTERS</p>
-      </div>
-      <div class="article-card">
-          <a href="https://mega.nz/file/9zcXHJBS#yZCAFIEQHaunm_uojXMBbeypqbS8RAf8SwgZVMfq-SE" target="_blank">
-              <img src="gammal_uiux.jpg" alt="UI/UX Course">
-          </a>
-          <h3>Course UI/UX [ FREE ]</h3>
-          <p>By Gammal Tech | ACU MASTERS</p>
-      </div>
-      <div class="article-card">
-        <a href="https://mega.nz/folder/onUQVKyR#fitpBr42HZS9euQZNPBNfg" target="_blank">
-            <img src="gammal_flutter.jpg" alt="JS Course">
-        </a>
-        <h3>Course Flutter [ FREE ]</h3>
-        <p>By Gammal Tech | ACU MASTERS</p>
-    </div>
-  
-      <!-- Row 2 (Duplicated Cards) -->
-      <div class="article-card">
-          <a href="https://mega.nz/file/kSV1GLhZ#610TGcA_XR1qeZkgCHlD0UWaVOci5z7Sft7PWpaK3Rc" target="_blank">
-              <img src="cehv12.jpg" alt="HTML Course">
-          </a>
-          <h3>Course CEHv12 [ FREE ]</h3>
-          <p>By Clay Team | ACU MASTERS</p>
-      </div>
-      <div class="article-card">
-          <a href="https://www.mediafire.com/file/8cxrp7x248fni48/Flutter+&+Firebase+Build+Your+Own+E-Commerce+App.rar/file" target="_blank">
-              <img src="flutter.png" alt="CSS Course">
-          </a>
-          <h3>Course Flutter [ FREE ]</h3>
-          <p>By Tharwat Samy | ACU MASTERS</p>
-      </div>
-      
-      
-  </section>
-  
+        <!-- Row 1 -->
+        <div class="article-card">
+            <a href="sessions.html">
+                <img src="master's_session.png" alt="MASTERS Sessions">
+            </a>
+            <h3>MASTERS's Sessions</h3>
+            <p>By ACU MASTERS</p>
+        </div>
+        <div class="article-card">
+            <a href="https://mega.nz/file/t2VxSCwT#pXao7MiPWlfDccnnT-6TmbUkONpIu691dndUGx04ojc"target="_blank">
+                <img src="gammal_html.jpg" alt="HTML Course">
+            </a>
+            <h3>Course HTML [ FREE ]</h3>
+            <p>By Gammal Tech | ACU MASTERS</p>
+        </div>
+        <div class="article-card">
+            <a href="https://mega.nz/folder/VnNk1LoA#A3V4sM9UgZ7FMEQzH66pkg"target="_blank">
+                <img src="gammal.css.jpg" alt="CSS Course">
+            </a>
+            <h3>Course CSS [ FREE ]</h3>
+            <p>By Gammal Tech | ACU MASTERS</p>
+        </div>
+        <div class="article-card">
+            <a href="https://mega.nz/folder/xqFgDTJQ#wtdNeVVZNvKW4IQsZ0rrDQ"target="_blank">
+                <img src="gammal_js.jpg" alt="JS Course">
+            </a>
+            <h3>Course JS [ FREE ]</h3>
+            <p>By Gammal Tech | ACU MASTERS</p>
+        </div>
+        <div class="article-card">
+            <a href="https://mega.nz/file/9zcXHJBS#yZCAFIEQHaunm_uojXMBbeypqbS8RAf8SwgZVMfq-SE"target="_blank">
+                <img src="gammal_uiux.jpg" alt="UI/UX Course">
+            </a>
+            <h3>Course UI/UX [ FREE ]</h3>
+            <p>By Gammal Tech | ACU MASTERS</p>
+        </div>
+        <div class="article-card">
+            <a href="https://mega.nz/folder/onUQVKyR#fitpBr42HZS9euQZNPBNfg"target="_blank">
+                <img src="gammal_flutter.jpg" alt="JS Course">
+            </a>
+            <h3>Course Flutter [ FREE ]</h3>
+            <p>By Gammal Tech | ACU MASTERS</p>
+        </div>
+    
+        <!-- Row 2 (Duplicated Cards) -->
+        <div class="article-card">
+            <a href="https://mega.nz/file/kSV1GLhZ#610TGcA_XR1qeZkgCHlD0UWaVOci5z7Sft7PWpaK3Rc"target="_blank">
+                <img src="cehv12.jpg" alt="HTML Course">
+            </a>
+            <h3>Course CEHv12 [ FREE ]</h3>
+            <p>By Clay Team | ACU MASTERS</p>
+        </div>
+        <div class="article-card">
+            <a href="https://www.mediafire.com/file/8cxrp7x248fni48/Flutter+%26+Firebase+Build+Your+Own+E-Commerce+App.rar/file"target="_blank">
+                <img src="flutter.png" alt="CSS Course">
+            </a>
+            <h3>Course Flutter [ FREE ]</h3>
+            <p>By Tharwat Samy | ACU MASTERS</p>
+        </div>
+    </section>
+
+    <!-- Hide the pre-loader once the page is fully loaded -->
+    <script>
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            preloader.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
