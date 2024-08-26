@@ -223,3 +223,118 @@ header .logo h1 {
 /* ... (rest of your CSS) */
 
 /* ... (rest of your CSS) */
+/*__________________________________________________________________________________
+/* Mobile (up to 480px) */
+@media only screen and (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  header .logo h1 {
+    font-size: 36px;
+  }
+
+  header h2 {
+    font-size: 20px;
+  }
+
+  header .cta .work-with-us {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .articles {
+    flex-direction: column;
+  }
+
+  .article-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+/* Tablet (481px to 768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  header .logo h1 {
+    font-size: 48px;
+  }
+
+  header h2 {
+    font-size: 24px;
+  }
+
+  header .cta .work-with-us {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .articles {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .article-card {
+    width: calc(50% - 20px);
+    margin: 10px;
+  }
+}
+
+/* Desktop (769px and up) */
+@media only screen and (min-width: 769px) {
+  header .logo h1 {
+    font-size: 55px;
+  }
+
+  header h2 {
+    font-size: 28px;
+  }
+
+  .articles {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .article-card {
+    width: calc(25% - 20px);
+    margin: 10px;
+  }
+}
+/* _____________________________________________________________
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1a3c;
+  color: white;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Adjust font sizes globally */
+h1, h2, h3 {
+  margin: 10px 0;
+}
+
+/* Adjust header styles */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #2b264b;
+}
+
+/* Adjust article card styles */
+.article-card {
+  background-color: #302c5a;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  margin: 10px;
+}
