@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1a3c;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #2b264b;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2em;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #302c5a;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #555;
+            border-radius: 5px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1em;
+        }
+
+        /* Futuristic Text */
+        .futuristic-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4em;
+            font-family: 'Orbitron', sans-serif;
+            color: #00FF7F;
+            text-shadow: 0 0 15px #00FF7F, 0 0 30px #00FF7F, 0 0 45px #00FF7F, 0 0 60px #00FF7F;
+            animation: glow 2s infinite alternate;
+            text-align: center;
+            word-break: break-word;
+        }
+
+        .futuristic-text.invalid {
+            color: #FF4500;
+            text-shadow: 0 0 15px #FF4500, 0 0 30px #FF4500, 0 0 45px #FF4500, 0 0 60px #FF4500;
+        }
+
+        @keyframes glow {
+            from {
+                opacity: 0.6;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Balloons */
+        .balloon {
+            position: absolute;
+            bottom: -150px;
+            width: 50px;
+            height: 70px;
+            background-color: #FFD700;
+            border-radius: 50%;
+            animation: float 5s ease-in infinite;
+        }
+
+        .balloon::before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 22px;
+            width: 5px;
+            height: 20px;
+            background-color: #FFD700;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-110vh);
+            }
+        }
+
+        .balloon:nth-child(2) {
+            background-color: #FF4500;
+            animation-delay: 1s;
+            left: 20%;
+        }
+
+        .balloon:nth-child(3) {
+            background-color: #00FF7F;
+            animation-delay: 2s;
+            left: 40%;
+        }
+
+        .balloon:nth-child(4) {
+            background-color: #4169E1;
+            animation-delay: 3s;
+            left: 60%;
+        }
+
+        .balloon:nth-child(5) {
+            background-color: #FF69B4;
+            animation-delay: 4s;
+            left: 80%;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .container h2 {
+                font-size: 1.2em;
+            }
+
+            .futuristic-text {
+                font-size: 2.5em;
+                word-break: break-word;
+            }
+
+            .btn {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+
+            .input-group input {
+                font-size: 0.9em;
+                padding: 8px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header h1 {
+                font-size: 1.2em;
+            }
+
+            .container h2 {
+                font-size: 1em;
+            }
+
+            .futuristic-text {
+                font-size: 2em;
+            }
+
+            .btn {
+                padding: 6px 12px;
+                font-size: 0.8em;
+            }
+
+            .input-group input {
+                font-size: 0.8em;
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Certificate Verification</h1>
+    </header>
+    <div class="container" id="formContainer">
+        <h2>Enter Certificate ID</h2>
+        <form id="verifyForm">
+            <div class="input-group">
+                <label for="certificateId">Certificate ID</label>
+                <input type="text" id="certificateId" placeholder="Enter certificate ID" required>
+            </div>
+            <button type="submit" class="btn">Verify</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+
+    <!-- Balloons and Success Message -->
+    <div id="balloonsContainer"></div>
+    <div id="successText" class="futuristic-text">Enter certification ID to check</div>
+
+    <script>
+        document.getElementById('verifyForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const certificateId = document.getElementById('certificateId').value.trim();
+            const formContainer = document.getElementById('formContainer');
+            const balloonsContainer = document.getElementById('balloonsContainer');
+            const successText = document.getElementById('successText');
+
+            // Example list of valid certificate IDs
+            const validCertificates = ['CERT12345', 'CERT67890', 'CERT24680','CERT32786',
+ 'CERT39817',
+ 'CERT60106',
+ 'CERT25501',
+ 'CERT10783',
+ 'CERT88176',
+ 'CERT56179',
+ 'CERT49883',
+ 'CERT11862',
+ 'CERT25501',
+ 'CERT08901',
+ 'CERT85217',
+ 'CERT54974',
+ 'CERT72632',
+ 'CERT39001',
+ 'CERT13147',
+ 'CERT17965',
+ 'CERT67384',
+ 'CERT91764',
+ 'CERT28871',
+ 'CERT15101',
+ 'CERT14084',
+ 'CERT87588',
+ 'CERT75296',
+ 'CERT36403',
+ 'CERT85503',
+ 'CERT32752',
+ 'CERT45028',
+ 'CERT64472',
+ 'CERT71084'];
+
+            // Clear previous state
+            balloonsContainer.innerHTML = '';
+            successText.textContent = 'Enter certification ID to check';
+            successText.classList.remove('invalid');
+
+            if (validCertificates.includes(certificateId)) {
+                formContainer.style.display = 'none';
+                successText.textContent = 'Your Certificate is Valid';
+
+                // Add balloons
+                for (let i = 0; i < 5; i++) {
+                    const balloon = document.createElement('div');
+                    balloon.classList.add('balloon');
+                    balloon.style.left = `${Math.random() * 90}%`;
+                    balloonsContainer.appendChild(balloon);
+                }
+            } else {
+                successText.textContent = 'Certificate is not valid';
+                successText.classList.add('invalid');
+            }
+        });
+    </script>
+</body>
+</html>
